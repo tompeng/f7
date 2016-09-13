@@ -27,7 +27,7 @@ $$(document).on('pageInit', function (e) {
 
     if (page.name === 'about') {
         // Following code will be executed for page with data-page attribute equal to "about"
-        myApp.alert('Here comes About page');
+        // myApp.alert('Here comes About page');
     }
 })
 
