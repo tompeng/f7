@@ -1,10 +1,18 @@
 // Initialize app
 var myApp = new Framework7({
-    swipePanel: 'left'
+    swipePanel: 'left',
+    init: false
 });
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
+
+myApp.onPageInit('index', function (page) {
+    updateNavbarTitle("Lana Del Rey");
+});
+
+myApp.init();
+
 
 // Add view
 var mainView = myApp.addView('.view-main', {
@@ -12,27 +20,20 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-// Now we need to run the code that will be executed only for About page.
+$$('#tab_link_album').on('click', function() {
+    updateNavbarTitle("Lana Del Rey");
+});
 
-// Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-myApp.onPageInit('about', function (page) {
-    // Do something here for "about" page
+$$('#tab_link_song').on('click', function() {
+    updateNavbarTitle("Born to Die");
+});
 
-})
+$$('#tab_link_lyric').on('click', function() {
+    updateNavbarTitle("Born to Die");
+});
 
-// Option 2. Using one 'pageInit' event handler for all pages:
-$$(document).on('pageInit', function (e) {
-    // Get page data from event data
-    var page = e.detail.page;
 
-    if (page.name === 'about') {
-        // Following code will be executed for page with data-page attribute equal to "about"
-        // myApp.alert('Here comes About page');
-    }
-})
-
-// Option 2. Using live 'pageInit' event handlers for each page
-$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
-    // Following code will be executed for page with data-page attribute equal to "about"
-    myApp.alert('Here comes About page');
-})
+function updateNavbarTitle(title) {
+    $$('.view-main .navbar .center').text(title);
+    myApp.sizeNavbars('.view-main');
+}

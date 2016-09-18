@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="bower_components/Framework7/dist/css/framework7.ios.min.css">
     <!-- Path to Framework7 iOS related color styles -->
     <link rel="stylesheet" href="bower_components/Framework7/dist/css/framework7.ios.colors.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="my-app.css">
 </head>
@@ -24,7 +26,7 @@
 <!-- Left panel with reveal effect-->
 <div class="panel panel-left panel-reveal">
     <div class="content-block-title">Something more simple</div>
-    <div class="layout-dark">
+    <div class="layout-dark color-gray">
         <div class="list-block media-list">
             <ul>
                 <li>
@@ -83,7 +85,7 @@
         <div class="navbar">
             <div class="navbar-inner">
                 <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                <div class="center sliding">First</div>
+                <div class="center sliding">Artist</div>
                 <div class="right">
                     <!--
                       Right link contains only icon - additional "icon-only" class
@@ -101,41 +103,110 @@
                 <div class="page-content">
                     <!-- Tabs wrapper, shoud have "tabs" class. Required element -->
                     <div class="tabs">
-                        <!-- First tab, should have "tab" class and unique id attribute -->
-                        <!-- First tab is active by default - additional "active" class -->
-                        <div class="tab active" id="tab1">
-                            ... Tab 1 content goes here ...
+                        <div class="tab active" id="tab_album">
+                            <div class="content-block-title">Albums</div>
+                            <div class="list-block media-list tablet-inset">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="item-link item-content">
+                                            <div class="item-media"><img src="//upload.wikimedia.org/wikipedia/en/thumb/2/29/BornToDieAlbumCover.png/220px-BornToDieAlbumCover.png" width="80"></div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title">Born to Die (Deluxe Version)</div>
+                                                    <!--<div class="item-after">2012</div>-->
+                                                </div>
+                                                <div class="item-subtitle">Lana Del Rey</div>
+                                                <div class="item-text">2012</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="item-link item-content">
+                                            <div class="item-media"><img src="//upload.wikimedia.org/wikipedia/en/thumb/6/6a/Paradise_EP.png/220px-Paradise_EP.png" width="80"></div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title">Paradise</div>
+                                                    <!--<div class="item-after">2012</div>-->
+                                                </div>
+                                                <div class="item-subtitle">Lana Del Rey</div>
+                                                <div class="item-text">2012</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <!-- Second tab, should have "tab" class and unique id attribute -->
-                        <div class="tab" id="tab2">
-                            ... Tab 2 content goes here ...
+                        <div class="tab" id="tab_song">
+                            <div class="content-block-title">Songs</div>
+                            <div class="list-block tablet-inset">
+                                <ul>
+                                    <a href="#" class="item-link item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title">Born to Die</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="item-link item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title">Off to the Races</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="item-link item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title">Blue Jeans</div>
+                                        </div>
+                                    </a>
+                                </ul>
+                            </div>
                         </div>
                         <!-- Third tab, should have "tab" class and unique id attribute -->
-                        <div class="tab" id="tab3">
-                            ... Tab 3 content goes here ...
+                        <div class="tab" id="tab_lyric">
+                            <div class="content-block-title"><a href="#" class="link">Favourite</a></div>
+                            <div class="content-block color-black">
+                                <p>
+                                    My oh me, my<br>
+                                    Feet don't fail me now<br>
+                                    Take me to your finish line<br>
+                                    Oh my heart it breaks every step that I take<br>
+                                    But I'm hoping that the gates, they'll tell me that you're mine<br>
+                                    Walking through the city streets<br>
+                                    Is it by mistake or design<br>
+                                    I feel so alone on a Friday night<br>
+                                    Can you make me feel like home if I tell you you're mine<br>
+                                    Don't make me sad, don't make me cry<br>
+                                    Sometimes love is not enough and the road gets tough I don't know why<br>
+                                    Keep making me laugh,<br>
+                                    Lets go get high<br>
+                                    The road is long, we carry on<br>
+                                    Try to have fun in the meantime<br>
+                                    Come take a walk on the wild side<br>
+                                    Let me kiss you hard in the pouring rain<br>
+                                    You like your girls insane,<br>
+                                    So choose your last words, this is the last time<br>
+                                    Cause you and I, we were born to die<br>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <!-- Link to another page -->
-                    <a href="about.html">About app</a>
+                    <!--<a href="about.html">About app</a>-->
                 </div>
             </div>
         </div>
         <!-- Bottom Toolbar-->
         <div class="toolbar tabbar tabbar-labels">
             <div class="toolbar-inner">
-                <a href="#tab1" class="tab-link active">
-                    <i class="icon icon-form-name"></i>
-                    <span class="tabbar-label">Page 1</span>
+                <a href="#tab_album" class="tab-link active" id="tab_link_album">
+                    <i class="icon ionicon ion-ios-albums"></i>
+                    <span class="tabbar-label">Albums</span>
                 </a>
-                <a href="#tab2" class="tab-link">
-                    <i class="icon icon-form-calendar">
-                        <span class="badge bg-red">5</span>
-                    </i>
-                    <span class="tabbar-label">Page 2</span>
+                <a href="#tab_song" class="tab-link" id="tab_link_song">
+                    <i class="icon ionicon ion-music-note"></i>
+                    <span class="tabbar-label">Songs</span>
                 </a>
-                <a href="#tab3" class="tab-link">
-                    <i class="icon icon-form-tel"></i>
-                    <span class="tabbar-label">Page 3</span>
+                <a href="#tab_lyric" class="tab-link" id="tab_link_lyric">
+                    <i class="icon ionicon ion-edit"></i>
+                    <span class="tabbar-label">Lyrics</span>
                 </a>
             </div>
         </div>
